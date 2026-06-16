@@ -51,15 +51,34 @@ Overwrite `status.json` with:
 }
 ```
 
-## Then publish
+## Then update the history + feed (only when the status CHANGES)
 
-If `status.json` changed, commit and push so GitHub Pages redeploys:
+`history.json` is the source of truth for the RSS feed (`feed.xml`). It holds a
+list of location *changes*, newest first.
+
+- Compare the new status to `history.json`'s **first** event (the current one).
+- **If the status changed**, prepend a new event to the `events` array:
+  ```json
+  { "status": "<new status>", "since": "<ISO 8601, Melbourne offset>", "note": "<evidence>" }
+  ```
+- **If the status is unchanged**, do NOT touch `history.json` — no feed item for
+  a non-change.
+
+Then regenerate the feed from history (always safe to run):
 
 ```
-git add status.json
+node build-feed.mjs
+```
+
+## Then publish
+
+```
+git add -A
 git commit -m "whereabouts: <status> (<note>)"
 git push origin main
 ```
 
-If nothing changed, still update `updated`/`note` so the "last checked" stamp
-stays fresh, commit, and push.
+Even when the status is unchanged, refresh `status.json`'s `updated`/`note` so the
+"last checked" stamp stays fresh, then commit and push. The push auto-deploys to
+Vercel (and GitHub Pages). Never commit invalid JSON or a feed that didn't
+regenerate.

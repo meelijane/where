@@ -104,6 +104,16 @@ footer {
   padding: 3vmin;
   font-size: clamp(0.7rem, 2.4vw, 0.85rem);
   opacity: 0.5;
+  display: flex;
+  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

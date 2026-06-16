@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Is Milly in Melbourne?</title>
+    <link>https://ismillyinmelbourne.com/</link>
+    <atom:link href="https://ismillyinmelbourne.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Whether Milly is currently in Melbourne. A new entry appears whenever her location changes.</description>
+    <language>en-au</language>
+    <lastBuildDate>Mon, 15 Jun 2026 21:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Milly is in Melbourne</title>
+      <link>https://ismillyinmelbourne.com/</link>
+      <guid isPermaLink="false">melbourne@2026-06-16T07:00:00+10:00</guid>
+      <pubDate>Mon, 15 Jun 2026 21:00:00 GMT</pubDate>
+      <description>Milly is currently in Melbourne, business as usual. (Full week of Melbourne-based events (choir, vet, Carlton meetup); no travel bookings in email.)</description>
+    </item>
+  </channel>
+</rss>
