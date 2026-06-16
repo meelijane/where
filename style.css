@@ -1,0 +1,113 @@
+:root {
+  --bg: #111;
+  --fg: #fff;
+  --accent: #fff;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  transition: background 900ms var(--ease);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- status palettes ---- */
+body[data-status="melbourne"] { --bg: #0a7d5a; --accent: #b6ff7a; }
+body[data-status="sydney"]    { --bg: #c2410c; --accent: #ffd27a; }
+body[data-status="elsewhere"] { --bg: #4338ca; --accent: #b8b3ff; }
+body[data-status="loading"]   { --bg: #111;    --accent: #555;    }
+body[data-status="error"]     { --bg: #111;    --accent: #888;    }
+
+/* soft moving glow so the big colour block isn't flat */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40vmax;
+  background: radial-gradient(closest-side, var(--accent) 0%, transparent 70%);
+  opacity: 0.16;
+  filter: blur(40px);
+  animation: drift 18s var(--ease) infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes drift {
+  from { transform: translate(-8vw, -6vh) scale(1); }
+  to   { transform: translate(8vw, 6vh) scale(1.15); }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6vmin;
+  gap: 0.4em;
+}
+
+.kicker {
+  font-size: clamp(0.9rem, 3.5vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.answer {
+  font-size: clamp(5rem, 38vw, 22rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  text-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.18);
+  animation: pop 700ms var(--ease) both;
+}
+
+@keyframes pop {
+  0%   { transform: scale(0.6) rotate(-4deg); opacity: 0; }
+  60%  { transform: scale(1.06) rotate(1.5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.detail {
+  font-size: clamp(1.1rem, 4.5vw, 2rem);
+  font-weight: 500;
+  max-width: 18ch;
+  opacity: 0.95;
+}
+
+.stamp {
+  font-size: clamp(0.75rem, 2.6vw, 0.95rem);
+  font-weight: 500;
+  opacity: 0.55;
+  margin-top: 0.6em;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3vmin;
+  font-size: clamp(0.7rem, 2.4vw, 0.85rem);
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+  .answer { animation: none; }
+  body { transition: none; }
+}

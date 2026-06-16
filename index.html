@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Is Milly in Melbourne?</title>
+    <meta name="description" content="A passive, self-updating answer to the only question that matters.">
+    <meta property="og:title" content="Is Milly in Melbourne?">
+    <meta property="og:description" content="Yes? No? Find out.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;📍&lt;/text&gt;&lt;/svg&gt;">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body>
+  <body data-status="loading">
     <main>
-        <h1>YES</h1>
-        <h1>NO</h1>
-        <h2>Milly is currently in Melbourne, business as usual.</h2>
-        <h2>Milly is currently in Sydney.</h2>
-        <h2>Milly is currently in somewhere else.</h2>
+      <p class="kicker">Is Milly in Melbourne?</p>
+      <h1 class="answer" id="answer">&hellip;</h1>
+      <p class="detail" id="detail">Checking&hellip;</p>
+      <p class="stamp" id="stamp"></p>
     </main>
-    <script src="index.js"></script>
+    <footer>
+      <span id="foot">Updates itself twice a day. Milly never touches it.</span>
+    </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
