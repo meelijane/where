@@ -1,6 +1,11 @@
 {
   "events": [
     {
+      "status": "sydney",
+      "since": "2026-07-20T19:07:00+10:00",
+      "note": "Flying to Sydney this evening (VA887, MEL 7:30 PM → SYD 8:55 PM). In Sydney through 22 Jul for the Macquarie Bank 'AI x Design' talk (50 Martin Place) and union delegate training; returns on VA882."
+    },
+    {
       "status": "melbourne",
       "since": "2026-06-16T07:00:00+10:00",
       "note": "Full week of Melbourne-based events (choir, vet, Carlton meetup); no travel bookings in email."
