@@ -6,7 +6,14 @@
     <atom:link href="https://ismillyinmelbourne.com/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Whether Milly is currently in Melbourne. A new entry appears whenever her location changes.</description>
     <language>en-au</language>
-    <lastBuildDate>Mon, 20 Jul 2026 09:07:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 09:05:00 GMT</lastBuildDate>
+    <item>
+      <title>Milly is in Melbourne</title>
+      <link>https://ismillyinmelbourne.com/</link>
+      <guid isPermaLink="false">melbourne@2026-07-22T19:05:00+10:00</guid>
+      <pubDate>Wed, 22 Jul 2026 09:05:00 GMT</pubDate>
+      <description>Milly is currently in Melbourne, business as usual. (Home in Melbourne — flew back from Sydney on 22 Jul (Virgin FRNGWA, SYD→MEL arriving ~7:05 PM). Hotel checkout and trip-receipt emails confirm the Sydney trip is done.)</description>
+    </item>
     <item>
       <title>Milly is in Sydney</title>
       <link>https://ismillyinmelbourne.com/</link>
